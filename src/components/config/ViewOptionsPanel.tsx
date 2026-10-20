@@ -1,4 +1,4 @@
-import { AspectRatio, Close, Gradient, Visibility } from "@mui/icons-material";
+import { AspectRatio, Close, Gradient, Visibility, SwapVert } from "@mui/icons-material";
 import {
   IconButton,
   Menu,
@@ -64,7 +64,7 @@ class ViewOptionsPanel extends Component<Props, State> {
               disabled={doc.pathlist.activePath.params.waypoints.length == 0}
               onClick={() => doc.flipPath()}
             >
-              <AspectRatio></AspectRatio>
+              <SwapVert></SwapVert>
             </IconButton>
           </span>
         </Tooltip>
