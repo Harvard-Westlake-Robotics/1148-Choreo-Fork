@@ -6,5 +6,6 @@
         "*.py": "python",
         "*.traj": "json"
     },
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cmake.sourceDirectory": "/Users/maxwaldman/Documents/GitHub/1148-Choreo-Fork/trajoptlib"
 }

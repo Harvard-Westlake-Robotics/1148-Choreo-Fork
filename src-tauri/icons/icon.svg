@@ -18,13 +18,13 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview7"
-     pagecolor="#ffffff"
+     pagecolor="#ce0f2c"
      bordercolor="#000000"
      borderopacity="0.25"
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
+     inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.42558504"
@@ -42,7 +42,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath19455">
       <rect
-         style="fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         style="fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
          id="rect19457"
          width="218.01666"
          height="218.01666"
@@ -55,7 +55,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath19459">
       <rect
-         style="fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         style="fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
          id="rect19461"
          width="218.01666"
          height="218.01666"
@@ -68,7 +68,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath19463">
       <rect
-         style="fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         style="fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
          id="rect19465"
          width="218.01666"
          height="218.01666"
@@ -80,7 +80,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath19467">
       <rect
-         style="fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         style="fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
          id="rect19469"
          width="218.01666"
          height="218.01666"
@@ -632,7 +632,7 @@
      id="layer1"
      style="display:inline">
     <rect
-       style="fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect290"
        width="218.01666"
        height="218.01666"
@@ -641,13 +641,13 @@
        ry="49.053749"
        clip-path="url(#clipPath19467)" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:18.5208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="fill:none;fill-opacity:1;stroke:#ce0f2c;stroke-width:18.5208;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="M -5.113717,162.23241 C 135.45255,172.76007 288.71535,74.739371 175.83492,49.460184 16.914647,13.870531 150.92271,238.19509 281.33985,254.33752"
        id="path6036"
        sodipodi:nodetypes="csc"
        clip-path="url(#clipPath19463)" />
     <rect
-       style="fill:none;fill-opacity:1;stroke:#ffc100;stroke-width:15.875;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="fill:none;fill-opacity:1;stroke:#ecab00;stroke-width:15.875;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect6912"
        width="101.20397"
        height="92.316902"
@@ -657,7 +657,7 @@
        transform="rotate(161.538)"
        clip-path="url(#clipPath19459)" />
     <circle
-       style="fill:#ffc100;fill-opacity:1;stroke:none;stroke-width:23.9507;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="fill:#ecab00;fill-opacity:1;stroke:none;stroke-width:23.9507;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="path9235-1-7"
        cx="-56.251713"
        cy="198.76535"
@@ -675,7 +675,7 @@
      id="layer3"
      inkscape:label="Shadow">
     <rect
-       style="display:inline;fill:#7f3cff;fill-opacity:1;stroke:#7f3cff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter2337)"
+       style="display:inline;fill:#1b1b1b;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter2337)"
        id="rect290-8"
        width="218.01666"
        height="218.01666"
