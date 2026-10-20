@@ -22,9 +22,9 @@ import {
   Project,
   Trajectory,
   WaitCommand,
+  Waypoint,
   type Expr,
-  type RobotConfig,
-  type Waypoint
+  type RobotConfig
 } from "./schema/DocumentTypes";
 import {
   CommandStore,

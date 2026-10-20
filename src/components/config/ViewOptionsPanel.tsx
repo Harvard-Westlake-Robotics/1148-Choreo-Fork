@@ -57,6 +57,17 @@ class ViewOptionsPanel extends Component<Props, State> {
           borderLeft: uiState.variablesPanelOpen ? "solid gray 1px" : "none"
         }}
       >
+        <Tooltip disableInteractive title="Flip path">
+          <span>
+            {/* If there's no waypoints, then don't allow user to flip path */}
+            <IconButton
+              disabled={doc.pathlist.activePath.params.waypoints.length == 0}
+              onClick={() => doc.flipPath()}
+            >
+              <AspectRatio></AspectRatio>
+            </IconButton>
+          </span>
+        </Tooltip>
         <Tooltip disableInteractive title="Zoom to fit trajectory">
           <span>
             {/* If there's no waypoints, then don't allow user to zoom to fit Waypoints */}
