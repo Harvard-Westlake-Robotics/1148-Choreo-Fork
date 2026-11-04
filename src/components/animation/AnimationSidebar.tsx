@@ -7,6 +7,8 @@ import Timeline from "./Timeline";
 import { IconButton } from "@mui/material";
 import { FastForward, FastRewind, NavigateNext, Pause, PlayArrow, Stop } from "@mui/icons-material";
 
+import hotkeys from "hotkeys-js";
+
 type Props = {
   running: boolean,
   onStart: () => void,
@@ -53,6 +55,26 @@ class AnimationSidebar extends Component<Props, State> {
     else uiState.setPathAnimationTimestamp(wt[wt.length - 1]);
 
     this.props.update();
+  }
+
+  componentDidMount(): void {
+    hotkeys("space", "all", (e) => {
+      e.preventDefault();
+      if (this.props.running) {
+        this.props.onStop(false);
+      } else {
+        this.props.onStart();
+      }
+    });
+
+    hotkeys("shift+,", "all", (e) => {
+      e.preventDefault();
+      this.prevWaypoint()
+    });
+    hotkeys("shift+.", "all", (e) => {
+      e.preventDefault();
+      this.nextWaypoint()
+    });
   }
 
   render() {

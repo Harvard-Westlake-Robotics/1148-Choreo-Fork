@@ -71,14 +71,6 @@ class PathAnimationPanel extends Component<Props, State> {
   }
 
   componentDidMount(): void {
-    hotkeys("space", "all", (e) => {
-      e.preventDefault();
-      if (this.state.running) {
-        this.onStop(false);
-      } else {
-        this.onStart();
-      }
-    });
     autorun(() => {
       const _ = doc.pathlist.activePathUUID;
       this.onStop(true);
