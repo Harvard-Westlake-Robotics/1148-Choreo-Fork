@@ -1,0 +1,31 @@
+.AnimationSidebar {
+    min-width: var(--sidebar-width);
+    flex-shrink: 0;
+    height: 100%;
+    border-right: thin solid var(--divider-gray);
+    padding-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.PlaybackControls {
+    width: 100%;
+    height: 35px;
+
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: thin solid var(--divider-gray);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.PlaybackButton {
+    display: flex;
+
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}

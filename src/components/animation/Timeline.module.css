@@ -1,0 +1,48 @@
+.Timeline {
+    display: flex;
+    width: 100%;
+
+    position: relative;
+
+    flex-direction: column;
+
+    padding-top: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.TimelineNavbar {
+    height: 35px;
+
+    flex-shrink: 0;
+
+    width: 100%;
+    position: relative;
+
+    border-bottom: thin solid var(--divider-gray);
+}
+
+.AnimationMarker {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    color: var(--accent-purple);
+    transform: translateX(-50%) translateY(1px);
+}
+
+.PathsContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.AnimationScrubBar {
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
+    width: 2px;
+    transform: translateX(-50%);
+    background-color: var(--accent-purple);
+    position: absolute;
+}

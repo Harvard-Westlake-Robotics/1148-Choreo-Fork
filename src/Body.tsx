@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Field from "./components/field/Field";
 import Sidebar from "./components/sidebar/Sidebar";
 import AppMenu from "./AppMenu";
-import PathAnimationPanel from "./components/field/PathAnimationPanel";
+import PathAnimationPanel from "./components/animation/PathAnimationPanel";
 
 type Props = object;
 

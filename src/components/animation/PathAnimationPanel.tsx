@@ -9,20 +9,26 @@ import { autorun } from "mobx";
 import { Tooltip } from "@mui/material";
 import hotkeys from "hotkeys-js";
 
+import styles from "./PathAnimationPanel.module.css";
+import Timeline from "./Timeline";
+import AnimationSidebar from "./AnimationSidebar";
+import React from "react";
+
 type Props = object;
 
 type State = {
   running: boolean;
+  i: number;
 };
 
 class PathAnimationPanel extends Component<Props, State> {
   state = {
-    running: false
+    running: false,
+    i: 0
   };
 
   timerId = 0;
-  totalTime = 0;
-  i = 0;
+  totalTime = 20;
   then = Date.now();
   step = (dt: number) => this.incrementTimer(dt);
 
@@ -47,87 +53,48 @@ class PathAnimationPanel extends Component<Props, State> {
         uiState.setPathAnimationTimestamp(pathAnimationTimestamp + dt / 1e3);
       }
 
+      this.update();
+
       this.timerId = requestAnimationFrame(this.step);
     }
   }
 
-  onStop() {
+  onStop(reset: boolean) {
     this.setState({ running: false });
     if (this.timerId !== 0) {
       window.cancelAnimationFrame(this.timerId);
     }
+    if (reset) {
+      uiState.setPathAnimationTimestamp(0);
+      requestAnimationFrame(() => this.update());
+    }
   }
+
   componentDidMount(): void {
     hotkeys("space", "all", (e) => {
       e.preventDefault();
       if (this.state.running) {
-        this.onStop();
+        this.onStop(false);
       } else {
         this.onStart();
       }
     });
     autorun(() => {
       const _ = doc.pathlist.activePathUUID;
-      this.onStop();
+      this.onStop(true);
     });
   }
+
+  update() {
+    this.setState({...this.state, i: (this.state.i + 1)});
+  }
+
   render() {
     const activePath = doc.pathlist.activePath;
-    this.totalTime = doc.pathlist.activePath.trajectory.getTotalTimeSeconds();
     return (
-      <div
-        style={{
-          color: "white",
-          gap: "1rem",
-          width: "100%",
-          height: "2rem",
-          backgroundColor: "var(--background-dark-gray)",
-          paddingLeft: "10px",
-          paddingRight: "10px",
-          boxSizing: "border-box",
-          display: "block",
-          borderTop: "thin solid var(--divider-gray)"
-        }}
-      >
-        <span
-          style={{
-            display:
-              activePath.trajectory.fullTrajectory.length >= 2
-                ? "flex"
-                : "none",
-            flexDirection: "row",
-            width: "100%",
-            height: "100%",
-            gap: "10px"
-          }}
-        >
-          <Tooltip
-            disableInteractive
-            title={
-              this.state.running
-                ? "Pause Path Animation"
-                : "Play Path Animation"
-            }
-          >
-            <IconButton
-              color="default"
-              onClick={() => {
-                if (this.state.running) {
-                  this.onStop();
-                } else {
-                  this.onStart();
-                }
-              }}
-            >
-              {this.state.running ? (
-                <PauseIcon></PauseIcon>
-              ) : (
-                <PlayIcon></PlayIcon>
-              )}
-            </IconButton>
-          </Tooltip>
-          <PathAnimationSlider></PathAnimationSlider>
-        </span>
+      <div className={styles.PathAnimationPanel}>
+        <AnimationSidebar running={this.state.running} onStart={() => this.onStart()} onStop={(setZero) => this.onStop(setZero)} update={() => this.update()}></AnimationSidebar>
+        <Timeline i={this.state.i}></Timeline>
       </div>
     );
   }

@@ -1,0 +1,7 @@
+.Labels {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 16px;
+    text-box-trim: trim-start;
+    text-box-edge: cap numeric;
+}

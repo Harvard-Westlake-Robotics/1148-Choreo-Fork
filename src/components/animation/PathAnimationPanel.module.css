@@ -1,0 +1,15 @@
+.PathAnimationPanel {
+    color: white;
+    width: 100%;
+    height: var(--path-animation-panel-height);
+    background-color: var(--background-dark-gray);
+    box-sizing: border-box;
+    display: flex;
+    border-top: thin solid var(--divider-gray);
+}
+
+.PlayPauseButton {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
