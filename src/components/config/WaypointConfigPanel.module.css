@@ -13,11 +13,13 @@
 }
 .ViewOptionsPanel {
   overflow-x: visible;
+  overflow-y: scroll;
   position: absolute;
   top: 0;
   right: 0;
   padding: 8px;
   width: fit-content;
+  max-height: calc(100% - 100px);
   background-color: var(--background-light-gray);
   color: white;
   display: flex;

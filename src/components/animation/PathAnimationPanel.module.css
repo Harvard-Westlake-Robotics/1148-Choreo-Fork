@@ -6,6 +6,7 @@
     box-sizing: border-box;
     display: flex;
     border-top: thin solid var(--divider-gray);
+    z-index: 1000;
 }
 
 .PlayPauseButton {
