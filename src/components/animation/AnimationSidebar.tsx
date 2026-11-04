@@ -31,19 +31,26 @@ class AnimationSidebar extends Component<Props, State> {
     this.props.onStop(true);
   }
 
-  jumpWaypoint(forward: boolean) {
+  nextWaypoint() {
     var wt = doc.pathlist.activePath.waypointTimestamps();
 
-    var t;
-    if (forward) t = wt.find((v: number) => (v > uiState.pathAnimationTimestamp)
+    var t = wt.find((v: number) => (v > uiState.pathAnimationTimestamp)
+                          && (Math.abs(v - uiState.pathAnimationTimestamp) > 0.05));
+    
+    if (t != undefined) uiState.setPathAnimationTimestamp(t);
+    else uiState.setPathAnimationTimestamp(wt[0]);
+
+    this.props.update();
+  }
+
+  prevWaypoint() {
+    var wt = doc.pathlist.activePath.waypointTimestamps();
+
+    var t = wt.findLast((v: number) => (v < uiState.pathAnimationTimestamp)
                               && (Math.abs(v - uiState.pathAnimationTimestamp) > 0.05));
-    else t = wt.find((v: number, i: number) => (v < uiState.pathAnimationTimestamp)
-                              && (wt[i + 1] > (uiState.pathAnimationTimestamp - 0.03)));
 
-    if (t) uiState.setPathAnimationTimestamp(t);
+    if (t != undefined) uiState.setPathAnimationTimestamp(t);
     else uiState.setPathAnimationTimestamp(wt[wt.length - 1]);
-
-    console.log("next waypoint");
 
     this.props.update();
   }
@@ -56,7 +63,7 @@ class AnimationSidebar extends Component<Props, State> {
               flexGrow: 1,
               flexShrink: 1,
               width: "100%"
-            }} onClick={() => this.jumpWaypoint(false)}><FastRewind></FastRewind></IconButton>
+            }} onClick={() => this.prevWaypoint()}><FastRewind></FastRewind></IconButton>
             <IconButton className={styles.PlaybackButton} sx={{
               flexGrow: 1,
               flexShrink: 1,
@@ -77,7 +84,7 @@ class AnimationSidebar extends Component<Props, State> {
               flexGrow: 1,
               flexShrink: 1,
               width: "100%"
-            }} onClick={() => this.jumpWaypoint(true)}><FastForward></FastForward></IconButton>
+            }} onClick={() => this.nextWaypoint()}><FastForward></FastForward></IconButton>
         </span>
       </div>
     );
