@@ -19,11 +19,11 @@ import WaypointVisibilityPanel from "../config/WaypointVisibilityPanel";
 import EventMarkerConfigPanel from "../config/eventmarker/EventMarkerConfigPanel";
 import styles from "./Field.module.css";
 import FieldOverlayRoot from "./svg/FieldOverlayRoot";
-
 import generateSound from "../../assets/sounds/GenerateSound.mp3";
 
 const playGenerateSound = () => {
     const audio = new Audio(generateSound);
+    audio.volume = 0.75;
     audio.play();
 };
 

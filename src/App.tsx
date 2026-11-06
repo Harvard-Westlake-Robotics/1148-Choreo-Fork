@@ -7,15 +7,15 @@ import { ThemeOptions, ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Body from "./Body";
 import { Theme } from "@mui/material";
-import useSound from "use-sound";
 import backgroundMusic from "./assets/sounds/BackgroundMusic.mp3";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function App() {
-    const [playMusic] = useSound(backgroundMusic, { loop: true, volume: 0.5 });
+    const backgroundMusicAudio = useRef(Object.assign(new Audio(backgroundMusic), { loop: true, volume: 0.5 }));
+
     useEffect(() => {
-        playMusic();
-    }, [playMusic]);
+        backgroundMusicAudio.current.play();
+    });
 
   const buttonOverrides = {
     // Name of the slot
