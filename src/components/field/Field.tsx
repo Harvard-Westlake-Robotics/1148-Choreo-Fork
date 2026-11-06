@@ -20,6 +20,13 @@ import EventMarkerConfigPanel from "../config/eventmarker/EventMarkerConfigPanel
 import styles from "./Field.module.css";
 import FieldOverlayRoot from "./svg/FieldOverlayRoot";
 
+import generateSound from "../../assets/sounds/GenerateSound.mp3";
+
+const playGenerateSound = () => {
+    const audio = new Audio(generateSound);
+    audio.play();
+};
+
 type Props = object;
 
 type State = object;
@@ -147,7 +154,10 @@ export class Field extends Component<Props, State> {
                 marginInline: 0,
                 visibility: activePath.canGenerate() ? "visible" : "hidden"
               }}
-              onClick={() => generateWithToastsAndExport(activePathUUID)}
+              onClick={() => {
+                playGenerateSound();
+                generateWithToastsAndExport(activePathUUID);
+              }}
               disabled={!activePath.canGenerate()}
             >
               <ShapeLineIcon></ShapeLineIcon>

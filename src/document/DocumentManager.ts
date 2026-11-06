@@ -725,7 +725,7 @@ export async function generateAndExport(uuid: string) {
 }
 
 export async function generateWithToastsAndExport(uuid: string) {
-  tracing.debug("generateWithToastsAndExport", uuid);
+    tracing.debug("generateWithToastsAndExport", uuid);
 
   await doc.generatePathWithToasts(uuid);
   await toast.promise(writeTrajectory(uuid), {
