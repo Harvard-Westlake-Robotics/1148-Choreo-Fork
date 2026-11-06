@@ -11,7 +11,8 @@ import {
   Redo,
   ShapeLine,
   Polyline,
-  Undo
+  Undo,
+  CreateNewFolder
 } from "@mui/icons-material";
 import Add from "@mui/icons-material/Add";
 import SidebarConstraint from "./SidebarConstraint";
@@ -152,6 +153,18 @@ class Sidebar extends Component<Props, State> {
               onClick={() => doc.pathlist.addPath("NewPath", true)}
             >
               <Add fontSize="small"></Add>
+            </IconButton>
+          </Tooltip>
+          <Tooltip disableInteractive title="Add Folder">
+            <IconButton
+              size="small"
+              color="default"
+              style={{
+                float: "right"
+              }}
+              onClick={() => doc.pathlist.addFolder("NewFolder", true)}
+            >
+              <CreateNewFolder fontSize="small"></CreateNewFolder>
             </IconButton>
           </Tooltip>
         </div>

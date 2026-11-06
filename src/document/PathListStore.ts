@@ -16,6 +16,7 @@ import {
 export const PathListStore = types
   .model("PathListStore", {
     paths: types.map(HolonomicPathStore),
+    folders: types.map(),
     activePathUUID: "",
     defaultPath: types.maybe(HolonomicPathStore)
   })
@@ -173,7 +174,54 @@ export const PathListStore = types
           }
         });
         return newUUID;
-      }
+      },
+      addFolder(
+        name: string,
+        select: boolean = false
+      ): string {
+        const usedName = this.disambiguateName(name);
+        const env = getEnv<Env>(self);
+        const newUUID = crypto.randomUUID();
+        env.startGroup(() => {
+          try {
+            // const folder;
+              ui: {
+            self.paths.put(path); //It's not ready yet but it needs to get the env injected
+            if (contents !== undefined) {
+              path.deserialize(contents);
+            } else {
+              path.setName(usedName);
+              path.params.addConstraint("StopPoint", true, "first");
+              path.params.addConstraint("StopPoint", true, "last");
+              path.params.addConstraint(
+                "KeepInRectangle",
+                false,
+                "first",
+                "last",
+                {
+                  x: { exp: "0 m", val: 0.0 },
+                  y: { exp: "0 m", val: 0.0 },
+                  w: {
+                    exp: `${FieldDimensions.FIELD_LENGTH} m`,
+                    val: FieldDimensions.FIELD_LENGTH
+                  },
+                  h: {
+                    exp: `${FieldDimensions.FIELD_WIDTH} m`,
+                    val: FieldDimensions.FIELD_WIDTH
+                  }
+                }
+              );
+            }
+
+            if (self.paths.size === 1 || select) {
+              self.activePathUUID = path.uuid;
+            }
+          } finally {
+            env.stopGroup();
+          }
+        });
+        return newUUID;
+      },
     };
     // The annoying thing we have to do to add the above actions to the object before we use them below
   })
